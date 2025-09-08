@@ -6,6 +6,7 @@
     --font-family: 'Inter', sans-serif;
     --grid-medzera: 10px;
     --pasiky: 50px;
+ --primary-color: #007bff; /* Define your primary color here */
 }
 
 
@@ -62,4 +63,22 @@
 .footer {
     grid-area: footer;
     min-height: var(--pasiky);
+}
+
+
+/* Style all form elements when they are NOT focused */
+input,
+textarea,
+select,
+button,
+input[type="checkbox"],
+input[type="radio"] {
+  border: 1px solid var(--primary-color);
+  box-sizing: border-box; /* Ensures padding and border don't increase element size */
+}
+
+/* Style all form elements when they ARE focused */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px; /* Adds a gap between the border and the outline */
 }
