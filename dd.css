@@ -82,3 +82,12 @@ input[type="radio"] {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px; /* Adds a gap between the border and the outline */
 }
+.srafovanie {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-color) 2px,
+    transparent 2px,
+    transparent var(--spacing)
+  );
+}
