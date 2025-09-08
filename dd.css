@@ -91,3 +91,55 @@ input[type="radio"] {
     transparent var(--spacing)
   );
 }
+
+/* Container for the tabs */
+.excel-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* Base style for all tabs */
+.excel-tabs li {
+  padding: 8px 16px;
+  background-color: #e6e6e6; /* Inactive tab background */
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  cursor: pointer;
+  z-index: 1; /* Ensure active tab is on top */
+}
+
+/* Active tab style */
+.excel-tabs li.active {
+  background-color: #fff; /* Active tab background */
+  border-bottom: 1px solid #fff;
+  z-index: 2; /* Bring active tab to front */
+}
+
+/* Create the Excel-style diagonal cut on the right */
+.excel-tabs li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -8px; /* Adjust to control the size of the diagonal cut */
+  width: 16px;
+  height: 100%;
+  background-color: inherit; /* Inherit parent's background color */
+  border-right: 1px solid #ccc;
+  transform: skewX(-20deg); /* Adjust the angle of the slant */
+  transform-origin: bottom left;
+  z-index: 1;
+}
+
+/* Hide the diagonal cut on the active tab */
+.excel-tabs li.active::after {
+  background-color: #fff; /* Match the active tab's background */
+  border-right-color: #fff; /* Hide the right border on the cut */
+}
+
+/* Adjust the diagonal cut for the last tab to avoid an extra line */
+.excel-tabs li:last-child::after {
+  content: none;
+}
